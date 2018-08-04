@@ -1,3 +1,3 @@
 function() {
-  console.log('添加key')
+  console.log('修复ssh')
 }
