@@ -1,4 +1,4 @@
 function() {
   console.log('修复ssh')
-  console.log('分支')
+  console.log('解决冲突')
 }
