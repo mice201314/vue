@@ -1,4 +1,4 @@
 function() {
   console.log('修复ssh')
-  console.log('unlocked')
+  console.log('远程clone')
 }
