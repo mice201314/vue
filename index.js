@@ -1,5 +1,6 @@
 function method() {
   console.log("dev");
   console.log("issure");
-  console.log("tian");
+  console.log("feat");
+  console.log("merge --squash");
 }
