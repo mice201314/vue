@@ -1,19 +1,5 @@
 //建立native的方法名和id的映射, 方便查看
 const BACK_TO_APP = 'backToApp';
-const GO_TO_LOGIN_PAGE = 'goToLoginPage';
-const GO_TO_HOSPITAL_LISTS = 'goToHospitalLists';
-const GO_TO_MEMBER_CARD = 'goToMemberCard';
-const GO_TO_BING_INSURANCE = 'goToBingInsurance';
-const SET_NAVIGATION_BAR_BASE = 'setNavigationBarBase';
-const SET_TALKING_DATA = 'setTalkingData';
-const IS_SHOW_PROGRESS_DIALOG = 'isShowProgressDialog';
-const GET_STEP_COUNTBYTIME = 'getStepCountByTime';
-const GET_SYSTEM_PATH = 'getSystemPath';
-const GET_USER_INFO = 'getUserInfo';
-const GO_WX_MIN_PROGRAM = 'goWXMinProgram';
-const  GO_TO_QY_SESSION = "goToQYSession";     
-const  GO_TO_PAGE = "goToPage"; //13：跑步  15：制定计划   
-const  GET_SPORT_BURN_CALORIES = "getSportBurnCalories"; //跑步     
 
 // 有回调的方法
 const HAVE_CALLBACK_NAMES = [
@@ -165,77 +151,6 @@ native.setNavigationTitle = function (title, fn) {
         value: title
     }, cb);
 };
-// 显示导航栏右侧按钮
-native.showNavigationForward = function () {
-    return this[SET_NAVIGATION_BAR_BASE]({
-        actionType: '2',
-        value: 'true'
-    });
-};
-// 隐藏导航栏右侧按钮
-native.hideNavigationForward = function () {
-    return this[SET_NAVIGATION_BAR_BASE]({
-        actionType: '2',
-        value: 'false'
-    });
-};
-// 显示导航栏左侧返回按钮
-native.showNavigationBack = function () {
-    return this[SET_NAVIGATION_BAR_BASE]({
-        actionType: '1',
-        value: 'true'
-    });
-};
-// 隐藏导航栏左侧返回按钮
-native.hideNavigationBack = function () {
-    return this[SET_NAVIGATION_BAR_BASE]({
-        actionType: '1',
-        value: 'false'
-    });
-};
-// 显示导航栏左侧关闭按钮
-native.showNavigationClose = function () {
-    return this[SET_NAVIGATION_BAR_BASE]({
-        actionType: '5',
-        value: 'true'
-    });
-};
-// 隐藏导航栏左侧关闭按钮
-native.hideNavigationClose = function () {
-    return this[SET_NAVIGATION_BAR_BASE]({
-        actionType: '5',
-        value: 'false'
-    });
-};
-/* 埋点相关, 如果设置了语言, 会自动加上后缀 */
-// 设置事件类型的埋点
-native.setEventTalkingData = function (data) {
-    return this[SET_TALKING_DATA]({
-        actionType: '1',
-        value: data + languageSuffix
-    });
-};
-// 设置进入页面的埋点
-native.setEnterPageTalkingData = function (data) {
-
-    return this[SET_TALKING_DATA]({
-        actionType: '2',
-        value: data + languageSuffix
-    });
-};
-// 设置退出页面的埋点
-native.setExitPageTalkingData = function (data) {
-    return this[SET_TALKING_DATA]({
-        actionType: '3',
-        value: data + languageSuffix
-    });
-};
-
-//七鱼会话
-// native.goToQYSession = function (data) {
-//     return this[GO_TO_QY_SESSION](data);
-// };
-
 
 /* 判断机器类型 */
 native.isIos = function () {
